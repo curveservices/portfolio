@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap');
+
+:root {
+    --background-blue: blue;
+    --background-white: whitesmoke;
+    --box-shadow: 16px 0px 8px 0px #292929da;
+}
