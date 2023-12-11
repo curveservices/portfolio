@@ -5,3 +5,28 @@
     --background-white: whitesmoke;
     --box-shadow: 16px 0px 8px 0px #292929da;
 }
+
+header {
+    display: flex;
+}
+
+main {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(350px,auto));
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    align-content: space-around;
+}
+
+.project-icon {
+    width: 32;
+    height: 32px;
+}
+
+.project-image {
+    width: 250px;
+    height: 200px;
+}
