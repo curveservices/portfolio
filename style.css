@@ -5,7 +5,7 @@
     --background-white: whitesmoke;
     --text-background: #e0eefa;
     --text-shadow:  0.1em 0.1em 0.2em rgba(0,0,0,0.5);
-    --box-shadow: 1px 1px 8px 0px #7f7f7fa3;
+    --box-shadow: 3px 3px 10px 0px #7f7f7fa3;
 }
 
 *,
@@ -36,7 +36,7 @@ header {
 
 .main-image {
     width: 300px;
-    height: 450px;
+    height: auto;
     margin: 0rem 4rem;
     object-fit: cover;
 }
@@ -65,39 +65,120 @@ header {
     top: 20px;
     left: 30px;
     width: 80vw;
-    padding: 2rem; 
-    text-align: justify;
+    padding: 1rem; 
+    text-align: center;
 }
 
 .about-me h1 {
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
 }
 
 .icon-container {
     display: flex;
-    justify-content: end;
-    gap: 1rem;
-    padding: 0rem 0.25rem;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0rem 0em;
+    margin-top: 2em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin-bottom: 3em;
+}
+
+.project-title {
+    margin: 1em 3em;
+    text-align: center;
+}
+
+main section {
+    display: flex;
+    flex-flow: column;
+    margin: 0em 2em;
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-white);
+}
+
+.project-image {
+    max-width: 100%;
+    height: 300px;
+    object-fit:fill;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;     
+    padding: 1em;  
+}
+
+.project-description {
+    padding: 1em 1.5em;
+    margin-bottom: 2em;
+    
+}
+
+.project-links {
+    display: flex;
+    gap: 1em;
 }
 
 a {
     text-decoration: none;
     color: black;
     font-size: 24px;
-    margin-top: 2rem;
+    
 }
 
 .project-icon {
-    width: 30px;
+    width: 40px;
     height: auto;
 }
 
-.project-image {
-    max-width: 50vw;
-    height: 75px;
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    color: white;
+    background-color: var(--background-blue);
 }
 
-@media only screen and (min-width: 900px){
+.contact-title {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+footer a {
+    margin-top: 1em;
+    color: white;
+}
+
+.fa-envelope,
+.fa-mobile-screen,
+.fa-house {
+    display: none;
+}
+
+.footer-image {
+    width: 100%;
+    height: auto;
+}
+
+.footer-text {
+    margin-bottom: 1em;
+}
+
+.icon-footer {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+/* Laptop */
+@media only screen and (min-width: 800px) {
     header {
         display: flex;
         align-items: center;
@@ -108,7 +189,7 @@ a {
     .main-image {
         width: 400px;
         height: auto;
-        margin: 2rem 0rem 2rem 2rem;
+        margin: 2rem 0rem 2rem 1rem;
     }
 
     .img-wrapper h1 {
@@ -136,45 +217,71 @@ a {
         top: 0;
         left: 0;
         width: 800px;
+        text-align: justify;
         background-color: var(--text-background);
         box-shadow: var(--box-shadow);
         padding: 2rem;
         margin-right: 2rem; 
     }
 
+    .icon-container {
+        display: flex;
+        justify-content: end;
+        gap: 1rem;
+        padding: 0rem;
+        margin-top: 2em;
+    }
+
     main {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 0.5em;
-        margin: 0 auto;
+        grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+        grid-row-gap: 3em;
+        grid-column-gap: 0.5em;
     }
 
     .project-title {
-        margin: 1em 3em;
-        padding: 0;
-    }
+        margin: 0.2em 1em;
+        text-align: left;
+    }  
 
-    main section {
+    footer {
         display: flex;
-        flex-flow: column wrap;
-       
-        gap: 1em;
+        flex-direction: row;
+        gap: 3em;
         padding: 1em;
-        margin: 1em ;
-        box-shadow: var(--box-shadow);
-        background-color: var(--background-white);
+        color: white;
+        background-color: var(--background-blue);
     }
 
-    .project-image {
-        max-width: 500px;
-        height: 250px;
-        object-fit: fill;
+    .fa-envelope,
+    .fa-mobile-screen,
+    .fa-house {
+        display: block;
     }
 
-    .project-header {
-        display: flex;
-        justify-content: space-around;
-        
+    .contact-title {
+        text-align: justify;
+        margin-bottom: 1em;
+    }
+
+    .footer-image {
+        width: 50%;
+        height: auto;
+        padding: 2em;
+    }
+
+    .contact-info {
+        padding: 3em 4em;
+    }
+
+    .icon-footer {
+        color: #000;
+        justify-content: left;
+        margin-bottom: 1em;
+    }
+
+    .icon-footer i {
+        color: black;
     }
 
     .fa-brands {
@@ -200,4 +307,5 @@ a {
         text-decoration: underline;
         text-shadow: 0 0 0.5em #fff;
     }
+
 }
