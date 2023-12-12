@@ -1,32 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Playfair:opsz,wght@5..1200,300&family=Roboto:wght@100&display=swap');
 
 :root {
-    --background-blue: blue;
+    --background-blue: #5f8aaf;
     --background-white: whitesmoke;
-    --box-shadow: 16px 0px 8px 0px #292929da;
+    --text-background: #e0eefa;
+    --text-shadow:  0.1em 0.1em 0.2em rgba(0,0,0,0.5);
+    --box-shadow: 1px 1px 8px 0px #7f7f7fa3;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior:smooth;
+}
+
+h1,h2,h3 { font-family: 'Playfair Display', serif; }
+
+p {
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    font-size: 20px;
 }
 
 header {
-    display: flex;
+    padding: 0;
+    margin-top: 2rem;
 }
 
-main {
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(350px,auto));
+.img-wrapper {
+    position: relative;  
 }
 
-section {
+.main-image {
+    width: 300px;
+    height: 450px;
+    margin: 0rem 4rem;
+    object-fit: cover;
+}
+  
+.img-wrapper h1 {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 4.5rem;
+    text-align: justify;
+    font-size: 4rem;
+    color: var(--background-blue);
+}
+
+.arrow-right {
+    z-index: -1;
+    left: 0;
+    top: -100px;
+    position: absolute;
+    border-top: 200px solid var(--background-blue);
+    border-bottom: 250px solid transparent;
+    border-left: 100vw solid var(--background-blue);
+}
+
+.about-me {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    width: 80vw;
+    padding: 2rem; 
+    text-align: justify;
+}
+
+.about-me h1 {
+    padding-bottom: 1rem;
+}
+
+.icon-container {
     display: flex;
-    flex-flow: column;
-    align-content: space-around;
+    justify-content: end;
+    gap: 1rem;
+    padding: 0rem 0.25rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    margin-top: 2rem;
 }
 
 .project-icon {
-    width: 32;
-    height: 32px;
+    width: 30px;
+    height: auto;
 }
 
 .project-image {
-    width: 250px;
-    height: 200px;
+    max-width: 50vw;
+    height: 75px;
+}
+
+@media only screen and (min-width: 900px){
+    header {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 2rem 2rem ;
+    }
+
+    .main-image {
+        width: 400px;
+        height: auto;
+        margin: 2rem 0rem 2rem 2rem;
+    }
+
+    .img-wrapper h1 {
+        position: absolute;
+        bottom: 2rem;
+        left: 3rem;
+        color: var(--background-blue);
+        font-size: 3.5rem;
+        letter-spacing: 2.5px;
+    }
+
+    .arrow-right {
+        z-index: -1;
+        left: 0;
+        top: -100px;
+        position: absolute;
+        border-top: 200px solid #5f8aaf;
+        border-bottom: 250px solid transparent;
+        border-left: 100vw solid #5f8aaf;
+        margin-left: -2rem;
+    }
+
+    .about-me {
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 800px;
+        background-color: var(--text-background);
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+        margin-right: 2rem; 
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 0.5em;
+        margin: 0 auto;
+    }
+
+    .project-title {
+        margin: 1em 3em;
+        padding: 0;
+    }
+
+    main section {
+        display: flex;
+        flex-flow: column wrap;
+       
+        gap: 1em;
+        padding: 1em;
+        margin: 1em ;
+        box-shadow: var(--box-shadow);
+        background-color: var(--background-white);
+    }
+
+    .project-image {
+        max-width: 500px;
+        height: 250px;
+        object-fit: fill;
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-around;
+        
+    }
+
+    .fa-brands {
+        transition: all 0.3s ease-out;
+        filter: drop-shadow(0.15em 0.15em, 0.15em #000)
+    }
+
+    .fa-brands:hover,
+    .fa-brands:focus {
+        transform: rotate(720deg) scale(1.2);
+        filter: drop-shadow(0 0 0.3em #fff);
+    }
+
+    a:visited,
+    a:link {
+        text-decoration: none;
+        text-shadow: var(--text-shadow);
+        transition: all 0.2s ease-out;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+        text-shadow: 0 0 0.5em #fff;
+    }
 }
